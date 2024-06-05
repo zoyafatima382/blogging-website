@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fatima Blog</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous"> -->
+
+
+</head>
+<body>
+    <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+      <symbol id="check2" viewBox="0 0 16 16">
+        <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"></path>
+      </symbol>
+      <symbol id="circle-half" viewBox="0 0 16 16">
+        <path d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"></path>
+      </symbol>
+      <symbol id="moon-stars-fill" viewBox="0 0 16 16">
+        <path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"></path>
+        <path d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z"></path>
+      </symbol>
+      <symbol id="sun-fill" viewBox="0 0 16 16">
+        <path d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"></path>
+      </symbol>
+    </svg>
+
+    <div class="dropdown position-fixed bottom-0 end-0 mb-3 me-3 bd-mode-toggle">
+      <button class="btn btn-bd-primary py-2 dropdown-toggle d-flex align-items-center" id="bd-theme" type="button" aria-expanded="false" data-bs-toggle="dropdown" aria-label="Toggle theme (dark)">
+        <svg class="bi my-1 theme-icon-active" width="1em" height="1em"><use href="#moon-stars-fill"></use></svg>
+        <span class="visually-hidden" id="bd-theme-text">Toggle theme</span>
+      </button>
+      <ul class="dropdown-menu dropdown-menu-end shadow" aria-labelledby="bd-theme-text">
+        <li>
+          <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light" aria-pressed="false">
+            <svg class="bi me-2 opacity-50" width="1em" height="1em"><use href="#sun-fill"></use></svg>
+            Light
+            <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
+          </button>
+        </li>
+        <li>
+          <button type="button" class="dropdown-item d-flex align-items-center active" data-bs-theme-value="dark" aria-pressed="true">
+            <svg class="bi me-2 opacity-50" width="1em" height="1em"><use href="#moon-stars-fill"></use></svg>
+            Dark
+            <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
+          </button>
+        </li>
+        <li>
+          <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="auto" aria-pressed="false">
+            <svg class="bi me-2 opacity-50" width="1em" height="1em"><use href="#circle-half"></use></svg>
+            Auto
+            <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
+          </button>
+        </li>
+      </ul>
+    </div>
+
+    
+<svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+  <symbol id="aperture" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24">
+    <circle cx="12" cy="12" r="10"></circle>
+    <path d="M14.31 8l5.74 9.94M9.69 8h11.48M7.38 12l5.74-9.94M9.69 16L3.95 6.06M14.31 16H2.83m13.79-4l-5.74 9.94"></path>
+  </symbol>
+  <symbol id="cart" viewBox="0 0 16 16">
+    <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.401l-9.397.472L4.415 11H13a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l.84 4.479 9.144-.459L13.89 4H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"></path>
+  </symbol>
+  <symbol id="chevron-right" viewBox="0 0 16 16">
+    <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"></path>
+  </symbol>
+</svg>
+
+<div class="container">
+  <header class="border-bottom lh-1 py-3">
+    <div class="row flex-nowrap justify-content-between align-items-center">
+      <div class="col-4 pt-1">
+        <a class="link-secondary" href="#">Subscribe</a>
+      </div>
+      <div class="col-4 text-center">
+        <a class="blog-header-logo text-body-emphasis text-decoration-none" href="#">Large</a>
+      </div>
+      <div class="col-4 d-flex justify-content-end align-items-center">
+        <a class="link-secondary" href="#" aria-label="Search">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="mx-3" role="img" viewBox="0 0 24 24"><title>Search</title><circle cx="10.5" cy="10.5" r="7.5"></circle><path d="M21 21l-5.2-5.2"></path></svg>
+        </a>
+        <a class="btn btn-sm btn-outline-secondary" href="#">Sign up</a>
+      </div>
+    </div>
+  </header>
+
+  <div class="nav-scroller py-1 mb-3 border-bottom">
+    <nav class="nav nav-underline justify-content-between">
+      <!-- <a class="nav-item nav-link link-body-emphasis active" href="#"></a> -->
+      <a class="nav-item nav-link link-body-emphasis" href="https://www.choosingtherapy.com/inspirational-blog/">Personal Development</a>
+      <a class="nav-item nav-link link-body-emphasis" href="https://blog.bit.ai/top-technology-blogs/">Technology</a>
+      <a class="nav-item nav-link link-body-emphasis" href="https://www.toptal.com/designers/blog">Design</a>
+      <a class="nav-item nav-link link-body-emphasis" href="https://wander-lush.org/colour-culture-creativity/">Culture</a>
+      <a class="nav-item nav-link link-body-emphasis" href="https://timesofindia.indiatimes.com/blogs/business/">Business</a>
+      <a class="nav-item nav-link link-body-emphasis" href="https://timesofindia.indiatimes.com/blogs/politics/">Politics</a>
+      <a class="nav-item nav-link link-body-emphasis" href="https://www.emeraldgrouppublishing.com/opinion-and-blog">Opinion</a>
+      <a class="nav-item nav-link link-body-emphasis" href="https://www.atascientific.com.au/17-science-blogs-everyone-should-follow/">Science</a>
+      <a class="nav-item nav-link link-body-emphasis" href="https://www.healthline.com/health/best-healthy-living-blogs#1">Health</a>
+      <a class="nav-item nav-link link-body-emphasis" href="https://www.refinery29.com/en-us/fashion-blogs">Style</a>
+      <a class="nav-item nav-link link-body-emphasis" href="https://www.travelblog.org/">Travel</a>
+    </nav>
+  </div>
+</div>
+
+<main class="container">
+  <div class="p-4 p-md-5 mb-4 rounded text-body-emphasis bg-body-secondary">
+    <div class="col-lg-6 px-0">
+      <h1 class="display-4 fst-italic">You don't become what you want, you become what you believe..</h1>
+      <p class="lead my-3">I’m no stranger to feeling stuck.
+        <br><br>
+        There are days I wake up and just go through the daily motions. I make coffee then sit down at my computer for a day of work. I’ll usually work out, walk the dogs, make dinner. Then, read, watch a show, go to bed. The next day? Wake up and do it all over again. 
+        <br>
+        Especially at the height of the pandemic, it started to feel like vicious monotony. Our lives seemingly stalled in bumper-to-bumper traffic. It feels like dreams, goals, and ambitions are buried in thick molasses or honey at the back of our brains. And even as we navigate this new normal, that “stuck” feeling might be stuck with us..</p>
+      <p class="lead mb-0"><a href="https://www.betterup.com/blog/personal-development" class="text-body-emphasis fw-bold">Continue reading...</a></p>
+    </div>
+  </div>
+
+  <div class="row mb-2">
+    <div class="col-md-6">
+      <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+        <div class="col p-4 d-flex flex-column position-static">
+          <strong class="d-inline-block mb-2 text-primary-emphasis">Technology</strong>
+          <h3 class="mb-0">New Scientist <hr></h3>
+          <div class="mb-1 text-body-secondary">Jun 4</div>
+          <p class="card-text mb-auto">
+            From the earliest stone tools to the latest advances in artificial intelligence, robotics, blockchains and virtual reality, technology has continuously transformed our lives. Stay informed about the latest technological breakthroughs and the ethical and societal norms they challenge..</p>
+          <a href="https://www.newscientist.com/subject/technology/" class="icon-link gap-1 icon-link-hover stretched-link">
+            Continue reading
+            <svg class="bi"><use xlink:href="#chevron-right"></use></svg>
+          </a>
+        </div>
+        <div class="col-auto d-none d-lg-block">
+          <!-- <svg class="bd-placeholder-img" width="200" height="250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#20c997"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em"></text></svg> -->
+          
+
+          <!-- <svg class="bd-placeholder-img card-img-top" width="100%" height="180" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#20c997"></rect></svg> -->
+
+          <img class="tech"src="tech.png" height="500px" width="400">
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+        <div class="col p-4 d-flex flex-column position-static">
+          <strong class="d-inline-block mb-2 text-success-emphasis">Design</strong>
+          <h3 class="mb-0">How to Design Happiness
+            Mark Wilson | 
+          <hr></h3>
+          <div class="mb-1 text-body-secondary">Nov 11</div>
+          <p class="mb-auto">
+            This article explores the three psychological stages of human happiness: anticipation, experience, and memory. Wilson uses lessons from a SXSW puppy experiment to show how designers can methodically reconstruct one of our most complex emotions.
+            
+            </p>
+          <a href="https://brandfolder.com/resources/inspirational-design-articles-elevate-your-thinking/" class="icon-link gap-1 icon-link-hover stretched-link">
+            Continue reading
+            <svg class="bi"><use xlink:href="#chevron-right"></use></svg>
+          </a>
+        </div>
+        <div class="col-auto d-none d-lg-block">
+          <!-- <svg class="bd-placeholder-img" width="200" height="250" xmlns="technology image.png/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#20c997"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em"></text></svg> -->
+          <img src="design.png" height="500px" width="400">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row g-5">
+    <div class="col-md-8">
+      <h3 class="pb-4 mb-4 fst-italic border-bottom">
+        Great things never comes from Comfort Zone
+      </h3>
+
+      <article class="blog-post">
+        <h2 class="display-5 link-body-emphasis mb-1">Freedom from distraction</h2>
+        <p class="blog-post-meta">January 1, 2021 by <a href="#">Mark</a></p>
+
+        <!-- <p>"Do not live as if you have ten thousand years left.Your fate hangs over you.while you still exist on this Earth, strive to become a genuinely great person." --Marcus Aurelius, Roman Emperor. </p> -->
+        <blockquote class="blockquote">
+          <p>“All change is hard at first, messy in the middle and gorgeous at the end.”
+            ― Robin S. Sharma, The 5AM Club: Own Your Morning. Elevate Your Life.</p>
+        </blockquote>
+        <hr>
+        <p>This is some additional paragraph placeholder content. It has been written to fill the available space and show how a longer snippet of text affects the surrounding content. We'll repeat it often to keep the demonstration flowing, so be on the lookout for this exact same string of text.</p>
+
+
+        <h2>Its time to ditch word and google docs</h2>
+        <p>Yoy could soon view the instagram stories from the main faceboo app.</p>
+        <blockquote class="blockquote">
+          <p><h2>Freedom from distraction</h2>
+            <p>Great things never come from comfort zone..</p>
+            <blockquote class="blockquote">
+              <p> "All of the biggest technological inventions created by man - the airplane, the automobile, the computer - says little about his intelligence, but speaks volumes about his laziness". - Mark Kennedy (Author)</p>
+            </blockquote></p>
+        </blockquote>
+        <p>This is some additional paragraph placeholder content. It has been written to fill the available space and show how a longer snippet of text affects the surrounding content. We'll repeat it often to keep the demonstration flowing, so be on the lookout for this exact same string of text.</p>
+        <h3>Top 10 Technology Blogs for Latest Tech Updates, News & Information!</h3>
+        <p>This is some additional paragraph placeholder content. It's a slightly shorter version of the other highly repetitive body text used throughout. This is an example unordered list:</p>
+        <ul>
+          <li><h2>Stay in the Present with this Technology Blogs:</h2>
+          <p>Professionals in almost every industry have trouble keeping up to date with changing tech trends. So, the best and the only way to stay relevant with technology is through the information available online!
+<br>
+            So, if you want intuitive articles along with insights from the tech industry, you need to read blogs that are consistently updated by people that know about the trends, and market, and care about giving quality content to their readers.
+            <br>
+            Let’s take a look at some of the best technology blogs out there!!</p>
+            <li><a href="https://www.wired.com/"><h1>Wired</h1></a></li>
+            <img src="wired.png">
+            <li>Founder: Louis Rossetto, Jane Metcalfe0</li>
+            <li>Year started: 1993</li>
+            <li>Domain Authority:94</li>
+          <hr>
+          <li><a href="https://techcrunch.com/"><h2>Techcrunch</h2></a></li>
+          <li>Founder:Michael Arrington, Keith Teare</li>
+          <li>Year started:2005</li>
+          <li>Domain Authority:94</li>
+          <img src="techcrunch.png">
+          <p>Invest yourself in the business verse of the tech world with one of the most popular technology blogs thriving this year- TechCrunch.
+<br><br>
+            The blog publishes content on businesses related to tech, analysis of emerging trends in tech, technology news, and listings of new tech products in the market. It is one of the first publications to report broadly on tech startups and funding rounds.
+            <br><br>
+            TechCrunch offers knowledge about new gizmos and business-related apps. It is like a reservoir of information on Internet companies & startups around the world.</p>
+          <li><a href="https://www.vox.com/technology"><h2>Recode</h2></a></li>
+          <li>Founder:Kara Swisher</li>
+          <li>Year started:2014</li>
+          <li>Domain Authority:93</li>
+          <img src="recode.png">
+          <p>Currently, owned by VOX media, Recode gives the most updated independent technology news, analysis trends, and reviews from the most respected and informed journalists as well as bloggers in media and technology.
+<br><br>
+            Recode is uncovering and explaining how our tech world is changing by focusing on the businesses of Silicon Valley.
+            <br><br>
+            Its founder Kara Swisher has all the connections to the latest tech tips and products, making it a robust technology blog to read!</p>
+        </ul>
+        <h2><p>Best Productivity books:</p></h2>
+        <ul>
+          <li><a href="https://openexo.com/book"><h5>Exponential Organization</h5></a></li>
+          <li><a href="https://www.goodreads.com/book/show/76865.Good_to_Great"><h5>Good to Great</h5></a></li>
+          <li><a href="https://www.betterup.com/blog/the-5-am-club/"><h5>The 5 am Club</h5></a></li>
+        </ul>
+        <p>Abstract of these books:</p>
+        <dl>
+          <dt>Exponential Organizations</dt>
+          <dd>An exponential organization, or ExO, describes an organization that because of its ability to leverage new technologies can claim production, output or overall impact that is at least ten times larger than a regular organization in the same field.</dd>
+          <dt>Good to Great</dt>
+          <dd>Good to Great (2011) presents the findings of a five-year study by Jim Collins and his research team. They identified public companies that had achieved enduring success after years of mediocre performance and isolated the factors that differentiated those companies from their lackluster competitors.</dd>
+          <dt>The 5 am Club</dt>
+          <dd>The 5 AM Club (2018) shows how embracing a revolutionary morning routine can deliver epic results. Through the enchanting story of an entrepreneur, an artist, and their eccentric billionaire mentor, it explains how you can use the first hour of your day to drive personal growth and get the most out of life.</dd>
+        </dl>
+        <h2>Summary </h2>
+        <p>What is The 5 AM Club theory?</p>
+        <ul>
+          <li><strong> your brain is most calm, focused, and productive when you wake.</strong> <code class="language-plaintext highlighter-rouge"></code>.</li>
+          <li><em>forming a new habit takes about 66 days.</em><code class="language-plaintext highlighter-rouge"></code>.</li>
+          <li>Seven hours of uninterrupted quality sleep is more beneficial than 10 hours of irregular rest. At least seven hours of quality sleep a night.<code class="language-plaintext highlighter-rouge"></code> <code class="language-plaintext highlighter-rouge"></code> </li>
+          <li>20 minutes to reflect on your goals via journaling, mindfulness practices, or visualization techniques</cite>, should use <code class="language-plaintext highlighter-rouge"></code>.</li>
+          <li><del>Focusing</del> you must develop good habits beyond your morning routine.<code class="language-plaintext highlighter-rouge"></code> and <ins>To gain a better understanding of the habits you can adopt in every area of your life,Robin outlines four "interior empires"</ins> to prioritize within your overall personal development.<code class="language-plaintext highlighter-rouge"></code>.</li>
+          <!-- <li>Superscript <sup>text</sup> uses <code class="language-plaintext highlighter-rouge">&lt;sup&gt;</code> and subscript <sub>text</sub> uses <code class="language-plaintext highlighter-rouge">&lt;sub&gt;</code>.</li> -->
+        </ul>
+        <p>Your thoughts can act as a self-fulfilling prophecy. When you think positively, it has a domino effect. All those positive vibes make you more likely to think creatively, manage stress, and adapt to change. To enjoy these benefits, pay attention to the information you absorb and how it shapes your thinking.</p>
+        <h2>Global Colour, Culture & Creativity</h2>
+        <h6><img src="location.png" height="22px"><a href="https://wander-lush.org/europe/">Europe</a> / <a href="https://wander-lush.org/asia/">Asia</a> /<a href="https://wander-lush.org/africa-middle-east/">Africa & the Middle East</a href="">  / <a href="https://wander-lush.org/americas/">South America</a></h6>
+        <p>A collection of stories and blogs that celebrate vibrant cities, food traditions, festivals, rituals, and heritage handicrafts.</p>
+        <h3>Live Life in Colour</h3>
+        <p>My greatest passion in life – one of the reasons I love to travel – is experiencing different cultures.
+<br>
+          When I started this blog back in 2015, it was to document the handicrafts, textiles and markets I encountered while living in Southeast Asia. As I’ve broadened my travel horizons, I’ve fallen in love with other cultural expressions as well, from food to street art to traditional music and dance.
+          
+      <br>    This guide to global colour, culture and creativity brings together some of my favourite stories and round-ups. From UNESCO World Heritage Sites and Intangible Cultural Heritage to the hidden gems I uncover on my travels, you’ll find lots of educational and inspirational content from all four corners of the globe.
+          <br>
+          Take a deep dive into global culture.</p><img src="culture.png" height="" width="">
+        <pre><code></code></pre>
+        <p><h1>Cultural guidebooks</h1>
+          In this series, locals, expats and frequent travellers share their top recommendations for culture-obsessed travellers.</p>
+      </article>
+
+      <article class="blog-post">
+        <h2 class="display-5 link-body-emphasis mb-1">The Best Healthy Living Blog</h2>
+        <p class="blog-post-meta">December 23, 2020 by <a href="https://www.healthline.com/health/best-healthy-living-blogs#1">healthline</a></p>
+        <p><h6>Written by Kelly Aiglon and Kristeen Cherney and Karen Lamoreux on July 28, 2020</h6>
+        </p>
+
+        <p>
+          Living a healthier life might seem like a tall order — the nutrition, the exercise, the inner happiness! But having some friendly advice at your disposal, whenever and wherever you need it, makes it easier and more fun. With just a click, these awesome blogs filled with tips, tricks, and personal stories will inspire you on your journey to wellness.</p>
+        <blockquote>
+          <p>Think of this as healthy vegetarian cooking, made simple. Writer Alex is a registered dietitian, and her ingredient shopping tips and cooking videos —<strong>Delish Knowledge</strong> check out the one for vegan paella! — are the next best thing to an office visit. Vegetarians or anybody curious about the lifestyle can consider this blog their starter kit for plant-based recipes that range in ingredients and complexity.</p>
+        </blockquote>
+        <!-- <p>This is some additional paragraph placeholder content. It has been written to fill the available space and show how a longer snippet of text affects the surrounding content. We'll repeat it often to keep the demonstration flowing, so be on the lookout for this exact same string of text.</p> -->
+        <h3>Rating table</h3>
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Upvotes</th>
+              <th>Downvotes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Alice</td>
+              <td>10</td>
+              <td>11</td>
+            </tr>
+            <tr>
+              <td>Bob</td>
+              <td>4</td>
+              <td>3</td>
+            </tr>
+            <tr>
+              <td>Charlie</td>
+              <td>7</td>
+              <td>9</td>
+            </tr>
+          </tbody>
+          <tfoot>
+            <tr>
+              <td>Totals</td>
+              <td>21</td>
+              <td>23</td>
+            </tr>
+          </tfoot>
+        </table>
+
+        <p>While self-actualization and Inner Work® is a lifelong process, your personal development goals shouldn't be daunting. Start small — like building a new skill or even investing in work-life balance. By doing so, you'll set yourself up for success in all areas of your life.</p>
+      </article>
+
+      <article class="blog-post">
+        <h2 class="display-5 link-body-emphasis mb-1">New feature</h2>
+        <p class="blog-post-meta">December 14, 2020 by <a href="#">Chris</a></p>
+
+        <p><img src="develop.png"></p>
+        <!-- <ul>
+          <li>First list item</li>
+          <li>Second list item with a longer description</li>
+          <li>Third list item to close it out</li>
+        </ul> -->
+        <p>There are plenty of benefits to personal development. Personal growth isn’t easy but the benefits will make the journey worthwhile. 
+<br>
+          My friend at Google has worked with a BetterUp coach for the last year. In her own personal development journey, she's shared why working with a coach has transformed her personal growth journey. </p>
+      </article>
+
+      <nav class="blog-pagination" aria-label="Pagination">
+        <a class="btn btn-outline-primary rounded-pill" href="#">Older</a>
+        <a class="btn btn-outline-secondary rounded-pill disabled" aria-disabled="true">Newer</a>
+      </nav>
+
+    </div>
+
+    <div class="col-md-4">
+      <div class="position-sticky" style="top: 2rem;">
+        <div class="p-4 mb-3 bg-body-tertiary rounded">
+          <h4 class="fst-italic">About</h4>
+          <p class="mb-0">There are few articles and related posts</p>
+        </div>
+
+        <div>
+          <h4 class="fst-italic">Recent posts</h4>
+          <ul class="list-unstyled">
+            <li>
+              <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top" href="robo.png">
+                <!-- <svg class="bd-placeholder-img" width="100%" height="96" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"></rect></svg> -->
+                <img src="robo.png" height="100px" width="500px">
+                <div class="col-lg-8">
+                  <h6 class="mb-0">Techmakers</h6>
+                  <small class="text-body-secondary">January 15, 2024</small>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top" href="#">
+                <!-- <svg class="bd-placeholder-img" width="100%" height="96" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"></rect></svg>
+                <div class="col-lg-8"> -->
+                  <img src="motive.png" height="100px" width="500px">
+                  <h6 class="mb-0">personal development</h6>
+                  <small class="text-body-secondary">January 14, 2024</small>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top" href="#">
+                <!-- <svg class="bd-placeholder-img" width="100%" height="96" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"></rect></svg> -->
+                <img src="blog.png" height="100px" width="500px">
+                <div class="col-lg-8">
+                  <h6 class="mb-0">Related blogs</h6>
+                  <small class="text-body-secondary">January 13, 2024</small>
+                </div>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="p-4">
+          <h4 class="fst-italic">Archives</h4>
+          <ol class="list-unstyled mb-0">
+            <li><a href="#">March 2021</a></li>
+            <li><a href="#">February 2021</a></li>
+            <li><a href="#">January 2021</a></li>
+            <li><a href="#">December 2020</a></li>
+            <li><a href="#">November 2020</a></li>
+            <li><a href="#">October 2020</a></li>
+            <li><a href="#">September 2020</a></li>
+            <li><a href="#">August 2020</a></li>
+            <li><a href="#">July 2020</a></li>
+            <li><a href="#">June 2020</a></li>
+            <li><a href="#">May 2020</a></li>
+            <li><a href="#">April 2020</a></li>
+          </ol>
+        </div>
+
+        <div class="p-4">
+          <h4 class="fst-italic">Elsewhere</h4>
+          <ol class="list-unstyled">
+            <li><a href="#">GitHub</a></li>
+            <li><a href="#">Twitter</a></li>
+            <li><a href="#">Facebook</a></li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<footer class="py-5 text-center text-body-secondary bg-body-tertiary">
+  <p>Copyright© <a href="https://getbootstrap.com/">Fatima Blog</a> by <a href="linkedin.com/in/zoya-fatima-89a339246"><img src=linkedin.png height="14"></a>.</p>
+  <p class="mb-0">
+    <a href="#">Back to top</a>
+  </p>
+</footer>
+<script src="/docs/5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+    
+
+</body>
+</html>
